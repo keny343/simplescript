@@ -90,10 +90,22 @@ npx tsx src/cli.ts --ast examples/hello.ss
 | [`examples/functions.ss`](./examples/functions.ss) | `fun` + `return` |
 | [`examples/logic.ss`](./examples/logic.ss) | Boolean logic + strings |
 
+## Playground (optional UI)
+
+Browser demo of the same pipeline (editor + tokens / AST / output):
+
+```bash
+npm run playground
+```
+
+Opens Vite on `http://localhost:5173` using [`playground/`](./playground/) and the TypeScript runtime under `src/`.
+
 ## Documentation
 
 - [`docs/GRAMMAR.md`](./docs/GRAMMAR.md) — EBNF, tokens, error phases  
 - [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) — pipeline design  
+- [`docs/ERROR_MODEL.md`](./docs/ERROR_MODEL.md) — lex / parse / semantic / runtime errors  
+- [`docs/EXAMPLES.md`](./docs/EXAMPLES.md) — sample programs and how to run them  
 
 ## Project layout
 
@@ -101,19 +113,22 @@ npx tsx src/cli.ts --ast examples/hello.ss
 simplescript/
 ├── src/           # lexer, parser, AST, semantic, interpreter, CLI
 ├── examples/      # .ss sample programs
+├── playground/    # optional Vite UI over the same runtime
 ├── tests/         # Vitest suite
-├── docs/          # grammar + architecture
+├── docs/          # grammar, architecture, errors, examples
 └── .github/workflows/ci.yml
 ```
 
 ## Tests & CI
 
 ```bash
-npm test
+npm install
 npm run typecheck
+npm test
+npm run build
 ```
 
-CI runs typecheck + tests on every push (Node 20).
+CI runs `npm ci` → typecheck → tests on every push (Node 20).
 
 ## Challenges solved
 
@@ -124,9 +139,9 @@ CI runs typecheck + tests on every push (Node 20).
 
 ## Roadmap
 
-- [ ] Bytecode VM backend (optional second execution path)  
-- [ ] Better multi-error reporting (collect all semantic errors)  
 - [ ] REPL mode  
+- [ ] Better multi-error reporting (collect all semantic errors)  
+- [ ] Bytecode VM backend (optional second execution path)  
 
 ## License
 

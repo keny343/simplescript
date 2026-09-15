@@ -36,6 +36,20 @@ Source (.ss)
 - **Closures** via environment chaining when defining `fun`.
 - **Infinite-loop guard** on `while` (1e6 iterations) for safety in demos.
 
+## Surfaces
+
+| Surface | Entry |
+|---------|--------|
+| Library API | `src/index.ts` → `run()` / `tokenize` / `parse` |
+| CLI | `src/cli.ts` (`npx tsx src/cli.ts …`) |
+| Playground | `npm run playground` → Vite app in `playground/` |
+
+All three share the same modules; the playground is a thin UI, not a second language implementation.
+
+## Error model
+
+See [`ERROR_MODEL.md`](./ERROR_MODEL.md). Failures are typed by pipeline phase (`lex` | `parse` | `semantic` | `runtime`).
+
 ## Inspired by
 
 Classic textbook pipeline (Dragon Book / Crafting Interpreters), implemented as a small, documented TypeScript project — not a framework CRUD.

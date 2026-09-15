@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SimpleScript Playground</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top">
+        <div class="brand">
+          <span class="mark" aria-hidden="true">SS</span>
+          <div>
+            <strong>SimpleScript</strong>
+            <span>Playground visual — lexer → parser → interpretador</span>
+          </div>
+        </div>
+        <div class="actions">
+          <label class="sample">
+            Exemplo
+            <select id="sample">
+              <option value="hello">hello</option>
+              <option value="factorial">factorial</option>
+              <option value="functions">functions</option>
+              <option value="logic">logic</option>
+            </select>
+          </label>
+          <button type="button" id="run" class="btn primary">Executar</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="panel editor-panel">
+          <div class="panel-head">
+            <h1>Código</h1>
+            <span class="hint">Ctrl + Enter para correr</span>
+          </div>
+          <textarea id="source" spellcheck="false" aria-label="Código SimpleScript"></textarea>
+        </section>
+
+        <section class="panel out-panel">
+          <div class="tabs" role="tablist">
+            <button type="button" class="tab active" data-tab="output" role="tab">Output</button>
+            <button type="button" class="tab" data-tab="tokens" role="tab">Tokens</button>
+            <button type="button" class="tab" data-tab="ast" role="tab">AST</button>
+          </div>
+          <pre id="output" class="view active" aria-live="polite"></pre>
+          <pre id="tokens" class="view" hidden></pre>
+          <pre id="ast" class="view" hidden></pre>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
