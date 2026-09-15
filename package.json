@@ -1,0 +1,37 @@
+{
+  "name": "simplescript",
+  "version": "1.0.0",
+  "description": "A small educational programming language — lexer, parser, AST, semantic analysis, and interpreter",
+  "type": "module",
+  "bin": {
+    "simplescript": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/cli.ts",
+    "run:file": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "interpreter",
+    "compiler",
+    "lexer",
+    "parser",
+    "ast",
+    "programming-language",
+    "computer-science"
+  ],
+  "author": "Adnírcio Inocêncio (keny343)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  }
+}

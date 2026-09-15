@@ -1,0 +1,4 @@
+// Hello SimpleScript
+let x = 10;
+let y = x + 20;
+print(y);
