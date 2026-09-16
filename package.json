@@ -11,6 +11,7 @@
     "start": "tsx src/cli.ts",
     "run:file": "tsx src/cli.ts",
     "playground": "vite --config vite.playground.config.ts",
+    "build:playground": "vite build --config vite.playground.config.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
